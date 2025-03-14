@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Flores - Machine Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clasificador de Flores - Machine Learning</h1>
+
+        <div class="explanation">
+            <h2>📖 Explicación del Caso de Uso</h2>
+            <p>
+                Este es un modelo de Machine Learning supervisado que clasifica flores en tres tipos:
+                <strong>Setosa, Versicolor y Virginica</strong>. Se basa en características como el tamaño de los
+                sépalos y pétalos. El modelo fue entrenado con el <strong>dataset Iris</strong> usando un algoritmo de
+                <em>Random
+                    Forest</em>.
+            </p>
+            <h3>📝 ¿Qué valores puedo ingresar?</h3>
+            <ul>
+                <li>Longitud del sépalo: entre <b>4.3 y 7.9</b></li>
+                <li>Ancho del sépalo: entre <b>2.0 y 4.4</b></li>
+                <li>Longitud del pétalo: entre <b>1.0 y 6.9</b></li>
+                <li>Ancho del pétalo: entre <b>0.1 y 2.5</b></li>
+            </ul>
+        </div>
+
+        <h2>🔍 Ingresa los valores para predecir la flor</h2>
+        <form method="post">
+            <label for="sepal_length">🌱 Longitud del sépalo:</label>
+            <input type="text" id="sepal_length" name="sepal_length" required>
+
+            <label for="sepal_width">🌿 Ancho del sépalo:</label>
+            <input type="text" id="sepal_width" name="sepal_width" required>
+
+            <label for="petal_length">🌺 Longitud del pétalo:</label>
+            <input type="text" id="petal_length" name="petal_length" required>
+
+            <label for="petal_width">🍃 Ancho del pétalo:</label>
+            <input type="text" id="petal_width" name="petal_width" required>
+
+            <button type="submit">✨ Predecir Tipo de Flor</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <h3>🔮 Predicción: <span>{{ prediction }}</span></h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
