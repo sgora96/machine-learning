@@ -6,6 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clasificador de Flores - Machine Learning</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Fondo azul claro */
+            color: #000080; /* Texto azul oscuro */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000080; /* Borde azul oscuro */
+            border-radius: 10px;
+        }
+
+        h1, h2, h3 {
+            color: #ffd700; /* Amarillo dorado */
+        }
+
+        .explanation {
+            background-color: #e6e6fa; /* Fondo azul claro */
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #000080; /* Borde azul oscuro */
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #000080; /* Texto azul oscuro */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #000080; /* Borde azul oscuro */
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ffd700; /* Fondo amarillo dorado */
+            color: #000080; /* Texto azul oscuro */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #ffcc00; /* Fondo amarillo más oscuro */
+        }
+
+        .result {
+            background-color: #e6e6fa; /* Fondo azul claro */
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #000080; /* Borde azul oscuro */
+            margin-top: 20px;
+        }
+
+        .result span {
+            font-weight: bold;
+            color: #000080; /* Texto azul oscuro */
+        }
+    </style>
 </head>
 
 <body>
@@ -18,8 +86,7 @@
                 Este es un modelo de Machine Learning supervisado que clasifica flores en tres tipos:
                 <strong>Setosa, Versicolor y Virginica</strong>. Se basa en características como el tamaño de los
                 sépalos y pétalos. El modelo fue entrenado con el <strong>dataset Iris</strong> usando un algoritmo de
-                <em>Random
-                    Forest</em>.
+                <em>Random Forest</em>.
             </p>
             <h3>📝 ¿Qué valores puedo ingresar?</h3>
             <ul>
