@@ -6,37 +6,40 @@ body {
 }
 
 .container {
-    width: 50%;
+    width: 60%;
     margin: auto;
     background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
     color: #1565c0;
+    font-size: 2.5em;
 }
 
 h2 {
     color: #1e88e5;
+    font-size: 2em;
 }
 
 h3 {
     color: #0d47a1;
+    font-size: 1.5em;
 }
 
 .explanation {
     background: #f0f8ff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
     text-align: left;
 }
 
 .explanation p,
 .explanation ul {
-    font-size: 16px;
+    font-size: 18px;
     color: #333;
 }
 
@@ -47,24 +50,24 @@ h3 {
 
 .explanation li {
     background: #e3f2fd;
-    padding: 8px;
-    margin-bottom: 5px;
-    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     text-align: left;
 }
 
 input,
 button {
-    padding: 10px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 18px;
     border: 1px solid #bbb;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 input {
@@ -84,10 +87,10 @@ button:hover {
 }
 
 .result {
-    margin-top: 20px;
-    padding: 15px;
+    margin-top: 25px;
+    padding: 20px;
     background: #e8f5e9;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .result h3 {
@@ -95,7 +98,7 @@ button:hover {
 }
 
 .result span {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     color: #1b5e20;
 }
