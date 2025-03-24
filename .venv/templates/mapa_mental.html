@@ -12,21 +12,37 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Fondo azul claro */
-            color: #000080; /* Texto azul oscuro */
+            background-color: #000000; 
+            color: #000080; 
         }
 
         .container {
             max-width: 1500px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            border: 2px solid #000080; /* Borde azul oscuro */
+            background-color: #3d3d3d;
+            border: 2px solid #000080;
             border-radius: 10px;
+            position: relative; /* Para posicionar la imagen */
         }
 
         h1, h2 {
-            color: #ffd700; /* Amarillo dorado */
+            color: #ff0606; 
+        }
+
+        .header {
+            text-align: center; /* Centrar el texto */
+            position: relative; /* Para posicionar la imagen */
+        }
+
+        .header img {
+            position: absolute; /* Posicionar la imagen */
+            left: 0; /* Colocar la imagen en la esquina izquierda */
+            top: 50%; /* Centrar verticalmente */
+            transform: translateY(-50%); /* Ajustar centrado vertical */
+            width: 80px; /* Tamaño de la imagen */
+            height: auto;
+            border-radius: 10px; /* Bordes redondeados */
         }
 
         iframe {
@@ -40,21 +56,25 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #ffd700; /* Fondo amarillo dorado */
+            background-color: #ff0606; 
             color: #000080; /* Texto azul oscuro */
             text-decoration: none;
             border-radius: 5px;
         }
 
         a:hover {
-            background-color: #ffcc00; /* Fondo amarillo más oscuro */
+            background-color: #ff0606; 
         }
     </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Mapa Mental</h1>
+        <!-- Encabezado con imagen y título -->
+        <div class="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK0Cz9rTasouYlLxFs1G3ciLERlzE7FEVn-Q&s" alt="Logo">
+            <h1>Mapa Mental</h1>
+        </div>
         <h2 class="text-center">Regresión Logística</h2>
 
         <div class="mt-4">
