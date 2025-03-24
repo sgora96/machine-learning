@@ -5,15 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Mental - Regresión Logística</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Fondo azul claro */
+            color: #000080; /* Texto azul oscuro */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #000080; /* Borde azul oscuro */
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #ffd700; /* Amarillo dorado */
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #000080; /* Borde azul oscuro */
+            border-radius: 10px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffd700; /* Fondo amarillo dorado */
+            color: #000080; /* Texto azul oscuro */
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #ffcc00; /* Fondo amarillo más oscuro */
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Mapa Mental</h1>
-        <h2>Regresión Logística</h2>
-        <div>
-            <iframe width="600" height="400" frameBorder="0"
+    <div class="container mt-5">
+        <h1 class="text-center">Mapa Mental</h1>
+        <h2 class="text-center">Regresión Logística</h2>
+
+        <div class="mt-4">
+            <iframe
                 src="https://www.mindmeister.com/maps/public_map_shell/3660209423/regresion-logistica?width=600&height=400&z=auto&no_share=1&no_logo=1"
                 scrolling="no" style="overflow:hidden;margin-bottom:5px">
                 Tu navegador no puede mostrar marcos. Visita
@@ -21,8 +66,12 @@
                     LOGISTICA</a> en MindMeister.
             </iframe>
         </div>
-        <a href="{{ url_for('index') }}">Volver al Inicio</a>
+
+        <a href="{{ url_for('index') }}" class="d-block text-center">Volver al Inicio</a>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
