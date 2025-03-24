@@ -48,3 +48,8 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
+@app.route("/mapa-mental")
+def mapa_mental():
+    return render_template("mapa_mental.html")
+
