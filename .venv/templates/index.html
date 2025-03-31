@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clasificador de Flores - Machine Learning</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Clasificador de Flores - Machine Learning</h1>
+    <div class="container mt-5">
+        <h1 class="text-center">Clasificador de Flores - Machine Learning</h1>
 
-        <div class="explanation">
+        <div class="explanation mt-4">
             <h2>📖 Explicación del Caso de Uso</h2>
             <p>
                 Este es un modelo de Machine Learning supervisado que clasifica flores en tres tipos:
                 <strong>Setosa, Versicolor y Virginica</strong>. Se basa en características como el tamaño de los
                 sépalos y pétalos. El modelo fue entrenado con el <strong>dataset Iris</strong> usando un algoritmo de
-                <em>Random
-                    Forest</em>.
+                <em>Random Forest</em>.
             </p>
             <h3>📝 ¿Qué valores puedo ingresar?</h3>
             <ul>
@@ -30,29 +32,36 @@
             </ul>
         </div>
 
-        <h2>🔍 Ingresa los valores para predecir la flor</h2>
-        <form method="post">
-            <label for="sepal_length">🌱 Longitud del sépalo:</label>
-            <input type="text" id="sepal_length" name="sepal_length" required>
-
-            <label for="sepal_width">🌿 Ancho del sépalo:</label>
-            <input type="text" id="sepal_width" name="sepal_width" required>
-
-            <label for="petal_length">🌺 Longitud del pétalo:</label>
-            <input type="text" id="petal_length" name="petal_length" required>
-
-            <label for="petal_width">🍃 Ancho del pétalo:</label>
-            <input type="text" id="petal_width" name="petal_width" required>
-
-            <button type="submit">✨ Predecir Tipo de Flor</button>
+        <h2 class="mt-4">🔍 Ingresa los valores para predecir la flor</h2>
+        <form method="post" class="mt-3">
+            <div class="mb-3">
+                <label for="sepal_length" class="form-label">🌱 Longitud del sépalo:</label>
+                <input type="text" class="form-control" id="sepal_length" name="sepal_length" required>
+            </div>
+            <div class="mb-3">
+                <label for="sepal_width" class="form-label">🌿 Ancho del sépalo:</label>
+                <input type="text" class="form-control" id="sepal_width" name="sepal_width" required>
+            </div>
+            <div class="mb-3">
+                <label for="petal_length" class="form-label">🌺 Longitud del pétalo:</label>
+                <input type="text" class="form-control" id="petal_length" name="petal_length" required>
+            </div>
+            <div class="mb-3">
+                <label for="petal_width" class="form-label">🍃 Ancho del pétalo:</label>
+                <input type="text" class="form-control" id="petal_width" name="petal_width" required>
+            </div>
+            <button type="submit" class="btn btn-primary">✨ Predecir Tipo de Flor</button>
         </form>
 
         {% if prediction %}
-        <div class="result">
-            <h3>🔮 Predicción: <span>{{ prediction }}</span></h3>
+        <div class="result mt-4">
+            <h3>🔮 Predicción: <span class="text-success">{{ prediction }}</span></h3>
         </div>
         {% endif %}
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
