@@ -4,6 +4,8 @@ import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+# Import the new linear regression analysis function
+from linear_regression import train_linear_regression
 
 app = Flask(__name__)
 
@@ -45,6 +47,28 @@ def index():
             prediction = "Error en los valores ingresados."
 
     return render_template("index.html", prediction=prediction)
+
+
+@app.route("/regresion-lineal", methods=['GET', 'POST'])
+def linear_regression():
+    results = None
+    error = None
+    
+    if request.method == 'POST':
+        try:
+            # Llamar a la función sin argumentos
+            results = train_linear_regression()  
+            
+            if results is None:
+                error = "No se pudo procesar los datos de la base de datos."
+        
+        except Exception as e:
+            error = f"Ocurrió un error: {str(e)}"
+    
+    return render_template("regression.html", 
+                            results=results, 
+                            error=error)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
