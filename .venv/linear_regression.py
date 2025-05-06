@@ -6,7 +6,16 @@ import seaborn as sns
 from sklearn.linear_model import LinearRegression
 
 # Configuración de conexión a la base de datos
-DB_CONN = "DRIVER={SQL Server};SERVER=localhost\\SQLEXPRESS;DATABASE=datasheet_act4;Trusted_Connection=yes;"
+DB_CONN = (
+    "DRIVER={SQL Server};"
+    "SERVER=DataSetMachineLearning.mssql.somee.com;"
+    "DATABASE=DataSetMachineLearning;"
+    "UID=sgomez_SQLLogin_1;"
+    "PWD=ph5nr42d1u;"
+    "TrustServerCertificate=True;"
+    "Persist Security Info=False;"
+    "Packet Size=4096;"
+)
 
 def train_linear_regression():
     try:
