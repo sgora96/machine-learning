@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regresión Lineal - Producción Agrícola</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Regresión Lineal sobre Producción Agrícola</h1>
+    <p>Se analiza la relación entre la superficie cultivada y la producción.</p>
+
+    <form method="post">
+        <button type="submit">Ejecutar Regresión</button>
+    </form>
+
+    {% if results %}
+    <h2>Resultados de la Regresión</h2>
+    <p><strong>Coeficiente:</strong> {{ results.coeficiente }}</p>
+    <p><strong>Intersección:</strong> {{ results.interseccion }}</p>
+    <img src="{{ results.image_path }}" alt="Gráfico de Regresión Lineal">
+    <pre>{{ results | safe }}</pre>
+    <!-- Mostrar toda la data en pantalla -->
+    {% endif %} {% if error %}
+    <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+
+
+
+</body>
+
+</html>
