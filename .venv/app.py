@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 # Import the new linear regression analysis function
 from linear_regression import train_linear_regression
+from regresion_logistica import predecir_apertura
 
 app = Flask(__name__)
 
@@ -68,6 +69,34 @@ def linear_regression():
     return render_template("regression.html", 
                             results=results, 
                             error=error)
+    
+@app.route('/logistica', methods=['GET', 'POST'])
+def logistica():
+    if request.method == 'POST':
+        try:
+            edad = float(request.form['edad'])
+            ingresos = float(request.form['ingresos'])
+            nivel = int(request.form['nivel'])
+            estado = int(request.form['estado'])
+            tarjeta = int(request.form['tarjeta'])
+
+            # Aquí pasa los datos a tu modelo
+            datos = [[edad, ingresos, nivel, estado, tarjeta]]
+            resultado = predecir_apertura({
+            "edad": edad,
+            "ingreso": ingresos,
+            "nivel": nivel,
+            "estado": estado,
+            "tarjeta": tarjeta
+})
+
+
+            return render_template('logistic.html', resultado=resultado)
+
+        except Exception as e:
+            return f"Error al procesar el formulario: {e}", 400
+
+    return render_template('logistic.html')
 
 
 if __name__ == "__main__":
