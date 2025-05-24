@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modelos ML</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Archivo CSS separado -->
+    <link href="{{ url_for('static', filename='menu_modelos.css') }}" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <!-- Fondo con opacidad en toda la página -->
+    <div class="container py-5">
+
+        <!-- Título principal -->
+        <h1 class="mb-4 text-center text-primary">Modelos de Machine Learning Supervisado</h1>
+
+        <!-- Bloque explicativo -->
+        <div class="card mb-5 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">¿Qué son los modelos de Machine Learning supervisado?</h5>
+                <p class="card-text">
+                    El aprendizaje supervisado es una técnica de Machine Learning donde el modelo aprende a partir de un conjunto de datos etiquetados. Se entrena al modelo con entradas y salidas conocidas para que pueda predecir resultados en datos nuevos.
+                </p>
+                <p class="card-text">
+                    <strong>Ventajas:</strong>
+                    <ul>
+                        <li>Alta precisión con datos de calidad.</li>
+                        <li>Fácil de interpretar y evaluar.</li>
+                        <li>Se puede usar para clasificación y regresión.</li>
+                    </ul>
+                    <strong>Desventajas:</strong>
+                    <ul>
+                        <li>Requiere datos etiquetados, lo cual puede ser costoso.</li>
+                        <li>No se adapta bien a datos no vistos o mal etiquetados.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Instrucción antes del selector -->
+        <p class="mb-2 fw-semibold">Seleccione un modelo de Machine Learning supervisado para ver más información:</p>
+
+        <!-- Selector de modelos -->
+        <select class="form-select" id="modeloSelect">
+            <option selected disabled>Elija un modelo...</option>
+            {% for modelo in modelos %}
+            <option value="{{ url_for('modelo', modelo_id=modelo.Id) }}">{{ modelo.Nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <!-- Script para redirigir al seleccionar -->
+    <script>
+        document.getElementById('modeloSelect').addEventListener('change', function() {
+            const selectedUrl = this.value;
+            if (selectedUrl) {
+                window.location.href = selectedUrl;
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS (opcional para componentes interactivos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

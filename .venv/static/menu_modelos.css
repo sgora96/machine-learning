@@ -1,0 +1,47 @@
+/* Fondo con imagen */
+
+body {
+    background-image: url('https://www.ejemplo.com/imagen-de-fondo.jpg');
+    /* Aquí pones la URL de la imagen */
+    background-size: cover;
+    /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center;
+    /* Centra la imagen */
+    background-attachment: fixed;
+    /* Mantiene la imagen fija mientras se hace scroll */
+    height: 100vh;
+    /* Asegura que la imagen cubra toda la altura de la ventana */
+}
+
+
+/* Fondo del contenedor con opacidad */
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco con opacidad */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    /* Si quieres agregar un efecto de desenfoque al fondo */
+}
+
+h1 {
+    color: #0d6efd;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo blanco de las tarjetas */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.form-select {
+    border-radius: 8px;
+    margin-top: 1rem;
+}

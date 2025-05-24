@@ -31,6 +31,32 @@
     </nav>
 
     <div class="container form-container">
+
+        <!-- 🔍 Sección explicativa -->
+        <section class="mb-5">
+            <h2>¿Qué es la Regresión Logística?</h2>
+            <p>
+                La <strong>regresión logística</strong> es una técnica estadística utilizada para predecir el resultado
+                de una variable dependiente binaria (es decir, con dos posibles resultados: sí/no, 1/0,
+                verdadero/falso). En este caso, se usa para
+                estimar la probabilidad de que un cliente abra una cuenta bancaria, en función de características como
+                edad, ingresos, nivel educativo y estado civil.
+            </p>
+            <p>
+                A diferencia de la regresión lineal, la regresión logística utiliza la función sigmoide (logística) para
+                generar una probabilidad entre 0 y 1. Si esta probabilidad supera un cierto umbral (por ejemplo, 0.5),
+                se clasifica como "sí", de lo contrario como
+                "no".
+            </p>
+            <div class="text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Exam_pass_logistic_curve.jpeg"
+                    alt="Curva de Regresión Logística" class="img-fluid rounded" style="max-width: 500px;">
+                <p class="text-muted mt-2" style="font-size: 0.9em;">Ejemplo de curva logística mostrando la
+                    probabilidad de aprobar un examen en función del número de horas de estudio.</p>
+            </div>
+        </section>
+
+        <!-- 🔢 Formulario -->
         <h1>Regresión Logística: Predicción de Apertura de Cuenta</h1>
         <p>Ingrese los datos del cliente para predecir si abrirá una cuenta bancaria.</p>
 
@@ -84,6 +110,12 @@
             <strong>Resultado:</strong> {{ resultado }}
         </div>
         {% endif %}
+
+        <!-- 🔙 Botón volver al dashboard -->
+        <div class="mt-4 text-center">
+            <a href="/dashboard" class="btn btn-secondary">⟵ Volver al Dashboard</a>
+        </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

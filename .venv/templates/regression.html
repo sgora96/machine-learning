@@ -27,8 +27,23 @@
             font-weight: bold;
         }
 
-        .chart-container {
-            margin-top: 20px;
+        .section {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1em;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+        }
+
+        h1,
+        h2 {
+            color: #333;
         }
     </style>
 </head>
@@ -37,23 +52,73 @@
     <h1>Regresión Lineal sobre Producción Agrícola</h1>
     <p>Se analiza la relación entre la superficie cultivada y la producción.</p>
 
+    <div class="section">
+        <h2>¿Qué es la Regresión Lineal?</h2>
+        <p>
+            La regresión lineal es una técnica estadística que permite modelar la relación entre una variable
+            dependiente (en este caso, la producción agrícola) y una o más variables independientes (como la superficie
+            cultivada).
+        </p>
+        <p>
+            En el contexto agrícola, se usa para predecir cuánto se va a producir en función del área sembrada. El
+            modelo calcula una línea que mejor ajusta los datos observados, definida por:
+        </p>
+        <p style="text-align: center;"><strong>Y = mX + b</strong></p>
+        <p>
+            Donde <strong>Y</strong> es la producción, <strong>X</strong> es la superficie cultivada, <strong>m</strong>
+            es el coeficiente que indica la influencia de X sobre Y, y <strong>b</strong> es la intersección con el eje
+            Y.
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/512px-Linear_regression.svg.png"
+            alt="Ejemplo de Regresión Lineal">
+    </div>
+
+    <div class="section">
+        <h2>Acerca del Conjunto de Datos</h2>
+        <p>
+            El conjunto de datos utilizado contiene registros de distintas regiones agrícolas con dos variables
+            principales:
+        </p>
+        <ul>
+            <li><strong>Superficie cultivada:</strong> representa el área total (en hectáreas) utilizada para sembrar un
+                cultivo específico.</li>
+            <li><strong>Producción:</strong> representa la cantidad total (en toneladas) obtenida al cosechar esa
+                superficie cultivada.</li>
+        </ul>
+        <p>
+            La regresión intenta identificar si existe una relación lineal entre la cantidad de tierra sembrada y la
+            producción resultante. Al ejecutar la regresión, se genera una gráfica con los datos y una línea de
+            tendencia que representa el modelo ajustado.
+        </p>
+    </div>
+
+    <!-- ...secciones anteriores... -->
+
     <form method="post">
+        <a href="/dashboard" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        ">⟵ Volver al Dashboard</a>
+
+        <br>
+
         <button type="submit">Ejecutar Regresión</button>
     </form>
+
 
     {% if results %}
     <h2>Resultados de la Regresión</h2>
     <p><strong>Coeficiente:</strong> {{ results.coeficiente }}</p>
     <p><strong>Intersección:</strong> {{ results.interseccion }}</p>
-    <img src="{{ results.image_path }}" alt="Gráfico de Regresión Lineal">
-    <pre>{{ results | safe }}</pre>
-    <!-- Mostrar toda la data en pantalla -->
-    {% endif %} {% if error %}
-    <p style="color: red;">Error: {{ error }}</p>
+    <img src="{{ results.image_path }}" alt="Gráfico de Regresión Lineal generado">
+    <pre>{{ results | safe }}</pre> {% endif %} {% if error %}
+    <p class="error">Error: {{ error }}</p>
     {% endif %}
-
-
-
 </body>
 
 </html>
